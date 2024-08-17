@@ -1,19 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap');
 
 :root {
-    --background-color: #f0f4f8;
-    --text-color: #6d597a;
-    --input-background-color: #fff0f6;
-    --button-background-color: #ffc1e3;
-    --button-hover-color: #d5a6ff;
+    --background-color: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); /* Gradient background for light mode */
+    --text-color: #4a4a4a; /* Darker text for better readability */
+    --input-background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent input background */
+    --button-background-color: linear-gradient(135deg, #f6d365 0%, #fda085 100%); /* Gradient button background */
+    --button-hover-color: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); /* Gradient button hover */
+    --card-background-color: rgba(255, 255, 255, 0.9); /* Light mode card background with slight transparency */
 }
 
 [data-theme="dark"] {
-    --background-color: #1a1a2e;
-    --text-color: #ffffff;
-    --input-background-color: #2d2d44;
-    --button-background-color: #4e4e76;
-    --button-hover-color: #6d597a;
+    --background-color: linear-gradient(135deg, #412f56 0%, #0e2959 100%); /* Gradient background for dark mode */
+    --text-color: #e0e0e0; /* Light grey text */
+    --input-background-color: rgba(49, 30, 93, 0.8); /* Semi-transparent dark input background */
+    --button-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradient button background */
+    --button-hover-color: linear-gradient(135deg, #fbc2eb 0%, #a18cd1 100%); /* Gradient button hover */
+    --card-background-color: rgba(34, 25, 45, 0.9); /* Darker card background with slight transparency */
 }
 
 * {
@@ -23,8 +25,7 @@
 }
 
 body {
-    background-color: var(--background-color);
-    background-image: url(https://wallpapers.com/images/high/pink-and-purple-gradient-pastel-aesthetic-tumblr-laptop-n4kkmgtmtz66djp2.webp);
+    background: var(--background-color);
     background-size: cover;
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -50,6 +51,9 @@ header h1 {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     animation: fadeIn 1s ease-out;
+    background: -webkit-linear-gradient(45deg, #ff9a9e, #fecfef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .dark-mode-toggle {
@@ -67,10 +71,10 @@ header h1 {
 }
 
 .search-params form {
-    background: linear-gradient(135deg, #fdf7ff, #ffe3f1);
+    background-color: var(--card-background-color);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
     margin: 1rem;
@@ -90,34 +94,34 @@ header h1 {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Light border for inputs */
     background-color: var(--input-background-color);
     font-family: 'Poppins', sans-serif;
 }
 
 .search-params button {
-    background-color: var(--button-background-color);
+    background: var(--button-background-color);
     color: white;
     font-size: 16px;
     padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .search-params button:hover {
-    background-color: var(--button-hover-color);
+    background: var(--button-hover-color);
     transform: scale(1.05);
 }
 
 .search {
     flex-grow: 1;
-    background: linear-gradient(135deg, #f0e4ff, #e4f0ff);
+    background-color: var(--card-background-color);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     margin: 1rem;
     max-width: 50%;
     height: 100%;
@@ -131,7 +135,7 @@ header h1 {
 }
 
 .search::-webkit-scrollbar-thumb {
-    background-color: var(--button-background-color);
+    background: var(--button-background-color);
     border-radius: 5px;
 }
 
@@ -142,19 +146,19 @@ header h1 {
 .pet {
     display: flex;
     align-items: center;
-    background: #ffffff;
+    background-color: var(--card-background-color);
     padding: 15px;
     border-radius: 12px;
     margin-bottom: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Light border for cards */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     animation: bounceIn 0.7s ease-out;
 }
 
 .pet:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .image-container {
@@ -164,7 +168,7 @@ header h1 {
     overflow: hidden;
     margin-right: 20px;
     border: 3px solid var(--button-background-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .image-container img {
@@ -188,12 +192,15 @@ header h1 {
     overflow: hidden;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
+    background: -webkit-linear-gradient(45deg, #f6d365, #fda085);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .info h2 {
     font-size: 16px;
     margin: 0;
-    color: #9e7fb8;
+    color: #8c8c8c;
     text-overflow: ellipsis;
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
@@ -203,13 +210,28 @@ header h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background: linear-gradient(135deg, #fff7ff, #ffe3f1);
+    background-color: var(--card-background-color);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
     max-width: 900px;
     animation: fadeIn 1s ease-out;
+    flex-direction: column;
+}
+
+.details-section {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--card-background-color);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+    animation: fadeIn 1s ease-out;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .details > div {
@@ -222,29 +244,32 @@ header h1 {
     font-size: 28px;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 10px;
+    background: -webkit-linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .details h2 {
-    color: #9e7fb8;
+    color: #8c8c8c;
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
     margin-bottom: 20px;
 }
 
 .details button {
-    background-color: var(--button-background-color);
+    background: var(--button-background-color);
     color: white;
     font-size: 18px;
     padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     margin-top: 20px;
 }
 
 .details button:hover {
-    background-color: var(--button-hover-color);
+    background: var(--button-hover-color);
     transform: scale(1.05);
 }
 
@@ -258,10 +283,53 @@ header h1 {
     max-width: 400px;
     width: 100%;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-out;
     margin-top: 20px;
 }
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.carousel img {
+    max-width: 100%;
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.carousel-smaller {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carousel-smaller img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carousel-smaller img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-smaller img.active {
+    border: 2px solid var(--button-background-color); /* Highlight active image */
+    transform: scale(1.1);
+}
+
 
 @media only screen and (max-width: 800px) {
     .container {
@@ -271,6 +339,7 @@ header h1 {
     .search-params {
         align-items: center;
         flex-direction: column;
+
         form, .search {
             max-width: 70%;
         }
@@ -358,4 +427,63 @@ header > a,
     overflow: hidden;
     text-indent: -9999px;
     margin-top: 20px;
+}
+#modal {
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent dark background */
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal > div {
+    background-color: var(--card-background-color); /* Use card background color */
+    max-width: 500px;
+    padding: 30px; /* Increase padding for more space */
+    text-align: center;
+    border-radius: 20px; /* Match border-radius with other elements */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Apply consistent shadow */
+    animation: fadeIn 0.5s ease-out; /* Add fade-in animation */
+}
+
+#modal button,
+#modal a {
+    background: var(--button-background-color); /* Use gradient button background */
+    padding: 10px 20px; /* Adjust padding for a better look */
+    color: white;
+    font-size: 16px;
+    border: none; /* Remove border */
+    border-radius: 8px; /* Match border-radius with buttons */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+#modal button:hover,
+#modal a:hover {
+    background: var(--button-hover-color); /* Use hover gradient */
+    transform: scale(1.05); /* Add scale effect */
+}
+
+#modal a {
+    display: inline-block;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+#modal:empty {
+    display: none;
+}
+
+#modal .buttons {
+    margin-top: 20px;
+}
+
+#modal .buttons button {
+    display: inline-block;
+    margin-right: 15px;
 }
